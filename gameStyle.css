@@ -1,16 +1,24 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-size: cover;
+  overflow-x: hidden;
+}
 .grid {
     background-color: rgba(0, 0, 0, 0.2);
-    margin: 50px auto;
+    margin: 80px auto;
     vertical-align: center;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 4px;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 50px;
-  }
+    box-shadow: 2px 7px 179px 7px rgba(0,0,0,0.83);
+    -webkit-box-shadow: 2px 7px 179px 7px rgba(0,0,0,0.83);
+    -moz-box-shadow: 2px 7px 179px 7px rgba(0,0,0,0.83);  }
   
   .space {
     background-color: white;
@@ -29,8 +37,8 @@
   .x,
   .o {
     font-family: "arial";
-    font-size: 70px;
-    position: absolute;
+    font-size: 60px;
+    /* position: absolute; */
   }
   
   .x {
@@ -45,9 +53,19 @@
     font-family: "IBM Plex Sans Condensed", sans-serif;
     font-family: "Montserrat", sans-serif;
     font-size: 35px;
-    color: tomato;
+    color: white;
     text-align: center;
-    margin-top: 50px;
+    margin: 50px 0px;
+
+    padding: 50px;
+    background-image: linear-gradient(to right top, #d627de, #b733e3, #943be6, #6a42e6, #2546e5);
+        box-shadow: -2px -7px 59px -5px rgba(0,0,0,0.61);
+-webkit-box-shadow: -2px -7px 59px -5px rgba(0,0,0,0.61);
+-moz-box-shadow: -2px -7px 59px -5px rgba(0,0,0,0.61);
+border-radius: 25px;
+  }
+  .header:hover {
+    opacity: .9;
   }
   
   .reset {
@@ -105,4 +123,22 @@
   .highlighted:hover {
     background-color: yellow;
   }
-  
+  .footer{
+
+    box-shadow: -4px 3px 81px -1px rgba(0,0,0,0.61);
+    -webkit-box-shadow: -4px 3px 81px -1px rgba(0,0,0,0.61);
+    -moz-box-shadow: -4px 3px 81px -1px rgba(0,0,0,0.61);
+    padding-top:25px;
+    padding-bottom: 5px;
+  }
+ 
+  .github-repo
+   {
+     color:black;
+    text-decoration: none;
+
+  }
+  .github-repo:hover{
+    color:black;
+    opacity: .6;
+  }

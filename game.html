@@ -11,6 +11,7 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
     <link rel="stylesheet" href="gameStyle.css" />
     <script src="https://unpkg.com/vue"></script>
@@ -71,10 +72,18 @@
       </div>
 
       <div class="wrapper" v-on:click="$data.reset()">
-        <button class="btn btn-danger" v-show="inProgress">Reset</button>
-        <button class="btn btn-warning" v-show="!inProgress">Restart</button>
+        <button class="btn btn-lg btn-danger" v-show="inProgress">Reset</button>
+        <button class="btn btn-lg btn-warning" v-show="!inProgress">Restart</button>
       </div>
     </div>
+
+<footer class="footer text-center">
+  <div>
+    <p class="text-white">Developed by <a href="https://github.com/sudesh1122" target="_blank" class="font-weight-bold text-warning">Sudesh Chaudhary</a></p>
+    <div ><a href="https://github.com/sudesh1122/tictactoe" target="_blank" class="github-repo"><i class="fab  fa-3x fa-github"></i> </a></div>
+  </div>
+</footer>
+
     <script>
       var newGame = new Game();
       var game = new Vue({
