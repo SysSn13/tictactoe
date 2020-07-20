@@ -22,6 +22,18 @@ class Game {
       }
     }
   
+    reset() {
+      this.inProgress = true;
+      this.winner = null;
+      this.currentTurn = this.O;
+      this.totalMoves = 0;
+      this.boxes = [];
+      for (var i = 0; i < 9; i++) {
+        var square = new Box();
+        this.boxes.push(square);
+      }
+    }
+  
     checkWinner() {
       var win = false;
       for (let i = 0; i <= 6; i = i + 3) {
@@ -39,7 +51,8 @@ class Game {
       for (let i = 0; i < 3; i++) {
         if (
           this.boxes[i].value &&
-          this.boxes[i].value === this.boxes[i + 3].value  === this.boxes[i + 6].value
+          this.boxes[i].value === this.boxes[i + 3].value &&
+          this.boxes[i].value === this.boxes[i + 6].value
         ) {
           win = true;
           this.boxes[i].isHightlighted = true;
@@ -72,10 +85,8 @@ class Game {
       }
       if (win) {
         this.winner = this.currentTurn;
-
         this.inProgress = false;
       }
-
       if (this.totalMoves === 9) {
         this.inProgress = false;
       }

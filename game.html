@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TIC TAC TOE</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="gameStyle.css" />
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <script src="gameBrain.js"></script>
+
+    <style>
+      .box {
+        height: 100px;
+        /* width: 100px; */
+        background-color: #bf19bf;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border: 8px solid #ffffff;
+
+        /* background: black; */
+      }
+      .row {
+        max-width: 300px;
+      }
+      .vertical-center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game">
+      <div id="game-info">
+        <div class="flex">
+          <div class="p1"></div>
+          <h1 class="header">Tic Tac Toe</h1>
+          <div class="p2"></div>
+        </div>
+        <div class="text-center">
+          <div class="p2" style="color:rgb(11, 72, 184)">
+            {{getInfo}}
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div
+          class="space"
+          v-for="(box,i) in boxes"
+          v-bind:id="i"
+          v-bind:class="{highlighted:box.isHightlighted,}"
+          v-on:click="$data.makeMove(i)"
+        >
+          <div v-bind:class="{x:(box.value==='X'),o:(box.value==='O')}">
+            {{box.value}}
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper" v-on:click="$data.reset()">
+        <button class="btn btn-danger" v-show="inProgress">Reset</button>
+        <button class="btn btn-warning" v-show="!inProgress">Restart</button>
+      </div>
+    </div>
+    <script>
+      var newGame = new Game();
+      var game = new Vue({
+        el: "#game",
+        data: newGame,
+        computed: {
+          getInfo: function() {
+            if (this.inProgress) {
+              return `Its ${this.currentTurn} \'s turn`;
+            } else {
+              if (this.winner) {
+                return `${this.winner} wins!`;
+              } else return "It's a draw!";
+            }
+          }
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>
