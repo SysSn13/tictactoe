@@ -6,4 +6,4 @@ The game is deployed on heroku. It can be accessed by visiting [this url](https:
 
 ---
 ### Demo
-![tictactoe-demo]([https://github.com/sudesh1122/tictactoe/blob/master/README.md](https://github.com/sudesh1122/tictactoe/blob/master/screenshots/demo.png)
+![tictactoe-demo](https://github.com/sudesh1122/tictactoe/blob/master/screenshots/demo.png?raw=true)
